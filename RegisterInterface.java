@@ -22,12 +22,16 @@ public class RegisterInterface extends JDialog {
 
     public RegisterInterface() {
         btnRegister.addActionListener(new ActionListener() {
+            //buton de register, seteaza informatiile campurilor
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
+
                 RegisterUser();
             }
         });
         btnBack.addActionListener(new ActionListener() {
+            //butonul de back face interfata de login sa fie vizibila si sa se inchisa cea de register
             @Override
             public void actionPerformed(ActionEvent e) {
                 main.setVisible(false);
@@ -38,7 +42,8 @@ public class RegisterInterface extends JDialog {
 
     }
     public boolean PasswordMatch(){
-
+        //verificare daca parola pe care vrei sa o ai este aceeasi cu cea de confirmare parola
+        //in cazul in care parolele sunt diferite, apare mesajul de eroare.
         if(!pfPassword.getText().equals(pfConfirmPassword.getText())){
             JOptionPane.showMessageDialog(this,
                     "Passwords don't match!",
@@ -51,6 +56,7 @@ public class RegisterInterface extends JDialog {
 
     public boolean EmptyFields(){
 
+        //metoda de verificare daca username,password,confirmpassword sau pincode au textfielduri goale
         if(tfUsername.getText().equals("")||pfPassword.getText().equals("")|| pfConfirmPassword.getText().equals("")||tfPinCode.getText().equals("")) {
             JOptionPane.showMessageDialog(this,
                     "Please enter all fields",

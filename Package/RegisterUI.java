@@ -7,9 +7,12 @@ public class RegisterUI {
     private String ConfirmPassword;
     private String PinCode;
 
+
     public String getUserName() {
         return UserName;
     }
+
+    //constructori:
     public RegisterUI()
     {
 
@@ -21,6 +24,7 @@ public class RegisterUI {
         this.ConfirmPassword = ConfirmPassword;
         this.PinCode = PinCode;
     }
+    //metodele de set(seteaza o valoare anume obiectului curent.) si get(returneaza proprietatea obiectului)
 
     public void setUserName(String userName) {
         this.UserName = userName;
