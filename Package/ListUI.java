@@ -6,14 +6,14 @@ public class ListUI extends RegisterUI{
 
     //vectorul de obiecte
     public static ArrayList<RegisterUI> UserList = new ArrayList<RegisterUI>();
-    private String UserName;
+    private String Password;
     //constructor
     public ListUI(){
 
     }
-    @Override //polimorfism, suprascrierea metodei getUserName
-    public String getUserName() {
-        return UserName;
+    @Override //polimorfism, suprascrierea metodei getPassword
+    public String getPassword() {
+        return Password;
     }
 
     public void setUserList(RegisterUI user){
