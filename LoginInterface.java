@@ -78,7 +78,7 @@ public class LoginInterface extends Component {
                 if(!isEmpty()){
                     for(RegisterUI i : ListUI.getUserList()){
 
-                        if(isUsername(i.getUserName()) && isPassword(i.getPassword())) {
+                        if(isPassword(i.getPassword())) {
                             isSuccesFull();
                             MagazinJucarieUI.main.setVisible(true);
                             main.setVisible(false);

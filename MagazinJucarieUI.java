@@ -26,7 +26,8 @@ public class MagazinJucarieUI {
     private JButton button1;
     private JLabel Message1;
 
-    public static JFrame main = new JFrame("Magazin");
+    public static JFrame main = new JFrame();
+    public static MagazinJucarieUI MUI = new MagazinJucarieUI();
 
     public MagazinJucarieUI(){
         Introduceti.addActionListener(new ActionListener() {
