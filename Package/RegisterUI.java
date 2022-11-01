@@ -7,9 +7,7 @@ public class RegisterUI {
     private String ConfirmPassword;
     private String PinCode;
 
-    public String getUserName() {
-        return UserName;
-    }
+
     public RegisterUI()
     {
 
@@ -20,6 +18,9 @@ public class RegisterUI {
         this.Password = Password;
         this.ConfirmPassword = ConfirmPassword;
         this.PinCode = PinCode;
+    }
+    public String getUserName() {
+        return UserName;
     }
 
     public void setUserName(String userName) {
