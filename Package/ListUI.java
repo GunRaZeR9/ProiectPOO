@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 public class ListUI {
 
+    //vectorul de obiecte
     public static ArrayList<RegisterUI> UserList = new ArrayList<RegisterUI>();
-
+    //constructor
     public ListUI(){
 
     }

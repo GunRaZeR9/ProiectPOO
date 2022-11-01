@@ -30,6 +30,9 @@ public class MagazinJucarieUI {
 
     public MagazinJucarieUI(){
         Introduceti.addActionListener(new ActionListener() {
+            // in acest buton, dupa scrierea in textfieldurile Name,Pret si NrJucarie, dupa apasarea acestuia,
+            // se va introduce in Labelul " Screen", unde se va seta textul cu proprietatile obiectului curent.
+            // Tot in momentul apasarii, se vor goli textfiedurile.
             @Override
             public void actionPerformed(ActionEvent e) {
                 MagazinJucarii MJ = new MagazinJucarii();
@@ -49,6 +52,7 @@ public class MagazinJucarieUI {
         });
 
         SCUMPESTEButton.addActionListener(new ActionListener() {
+            //in acest buton, se scumpeste pretul obiectului
             @Override
             public void actionPerformed(ActionEvent e) {
                 Scumpire(Parsare(Valoare), Parsare(SITexField));
@@ -59,6 +63,7 @@ public class MagazinJucarieUI {
             }
         });
         button2.addActionListener(new ActionListener() {
+            //in acest buton, se ieftineste pretul obiectului
             @Override
             public void actionPerformed(ActionEvent e) {
                 Ieftinire(Parsare(Valoare), Parsare(SITexField));
@@ -70,6 +75,7 @@ public class MagazinJucarieUI {
         });
 
         MAIESTEPESTOCButton.addActionListener(new ActionListener() {
+            //in acest buton, se afiseaza mesajul daca mai este pe stoc sau nu, respectiv datele obiectului
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(Check(MagazinJucarieUI.ListaJucarii, Parsare(SITexField))){
@@ -89,6 +95,8 @@ public class MagazinJucarieUI {
         });
     }
 
+    //verificare daca ID-ul jucariei respective pe care vrem sa o cautam este egala cu ID-UL unei jucarii
+    //care face parte deja din vectorul de obiecte ArrayList "listaJucarii"
     private boolean Check(ArrayList<MagazinJucarii> listaJucarii, int nrJucarie) {
         for(MagazinJucarii jucarie : MagazinJucarieUI.ListaJucarii){
             if(jucarie.getNrPerJucarie() == nrJucarie){
@@ -98,6 +106,7 @@ public class MagazinJucarieUI {
         return false;
     }
 
+    //transformare in Integer, daca nu se poate face in try, se va afisa mesajul " NU ESTE UN INTREG"
     private int Parsare(JTextField textField){
         try
         {
@@ -110,10 +119,12 @@ public class MagazinJucarieUI {
         }
     }
 
+    // metoda de get, panel1 este private
     public JPanel getPanel(){
         return panel1;
     }
 
+    //pentru Label "Screen" care afiseaza elementele vectorului de obiecte
     private String getList(){
         String msg= "";
         int i = 0;
@@ -124,6 +135,10 @@ public class MagazinJucarieUI {
         return msg;
     }
 
+    //metoda de scumpire ce se foloseste pentru butonul SCUMPIRE.
+
+    //verifica mai intai daca ID-ul jucariei pe care vrei sa o cauti daca este egal cu ID-ul unei jucarii
+    //existente .In caz afirmativ, se va seta pretul jucariei obiectului curent adunand cu valoarea respective.
     private void Scumpire(int valoare, int nrJucarie)
     {
         for(MagazinJucarii jucarie : MagazinJucarieUI.ListaJucarii){
@@ -133,6 +148,11 @@ public class MagazinJucarieUI {
             }
         }
     }
+
+    //metoda de ieftinire ce se foloseste pentru butonul IEFTINIRE.
+
+    //verifica mai intai daca ID-ul jucariei pe care vrei sa o cauti daca este egal cu ID-ul unei jucarii
+    //existente .In caz afirmativ, se va seta pretul jucariei obiectului curent scazand cu valoarea respectiva.
 
     private void Ieftinire(int valoare, int nrJucarie){
         for(MagazinJucarii jucarie : MagazinJucarieUI.ListaJucarii)
@@ -145,6 +165,7 @@ public class MagazinJucarieUI {
         }
     }
 
+
     private MagazinJucarii getJucarie(int nrJucarie){
         for(MagazinJucarii jucarie : MagazinJucarieUI.ListaJucarii)
         {
@@ -156,6 +177,7 @@ public class MagazinJucarieUI {
         return null;
     }
 
+    //metode de get pentru a returna valorile campurilor private.
     public JTextField getPret(){
         return Pret;
     }

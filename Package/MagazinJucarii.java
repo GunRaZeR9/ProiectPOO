@@ -8,17 +8,34 @@ public class MagazinJucarii
     private int NrPerJucarie=0;
     private final int MAXIM_NrPerJucarie= 5;
 
+    //SINGLETON
+    //////////////////////////////////////
+    private static MagazinJucarii instance;
+    public MagazinJucarii()
+    {
+
+    }
+    public static MagazinJucarii getInstance()
+    {
+        if(instance == null)
+        {
+            instance = new MagazinJucarii();
+        }
+        return instance;
+    }
+    ////////////////////////////////////////////////////
+
     //constructor ce initializeaza campurile clasei
-    public MagazinJucarii(String nume, int pret, int IDprodus, int NrPerJucarie)
+    public MagazinJucarii(String nume, int pret, int NrPerJucarie)
     {
         this.nume = nume; //referinta catre obiectul curent
         this.pret = pret;
         this.NrPerJucarie = NrPerJucarie;
     }
 
-    public MagazinJucarii(){
 
-    }
+
+
 
     // in metoda vanzare, returneaza adevarat daca sunt pe stoc mai mult de 5 produse(in acest magazin este obligatoriu sa ramana 5 produse pentru reclama!)
     //altfel, returneaza false daca sunt mai putin de 5 produse. aceasta functie ajuta la metoda toString()
@@ -111,6 +128,8 @@ public class MagazinJucarii
     {
         this.NrPerJucarie = NrPerJucarie;
     }
+
+
 
 
 }
