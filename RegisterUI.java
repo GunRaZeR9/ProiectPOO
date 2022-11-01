@@ -8,6 +8,17 @@ public class RegisterUI {
     public String getUserName() {
         return UserName;
     }
+    public RegisterUI()
+    {
+
+    }
+    public RegisterUI(String UserName, String Password, String ConfirmPassword, String PinCode)
+    {
+        this.UserName = UserName;
+        this.Password = Password;
+        this.ConfirmPassword = ConfirmPassword;
+        this.PinCode = PinCode;
+    }
 
     public void setUserName(String userName) {
         this.UserName = userName;
