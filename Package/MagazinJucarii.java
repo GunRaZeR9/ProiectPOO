@@ -1,3 +1,5 @@
+package Package;
+
 public class MagazinJucarii
 {
     //campuri ce se stocheaza in heap

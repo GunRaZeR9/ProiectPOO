@@ -1,9 +1,8 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
+import Package.*;
 public class MagazinJucarieUI {
     private static ArrayList<MagazinJucarii> ListaJucarii = new ArrayList<MagazinJucarii>();
     public JPanel panel1;
