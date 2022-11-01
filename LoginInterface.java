@@ -78,8 +78,10 @@ public class LoginInterface extends Component {
                 if(!isEmpty()){
                     for(RegisterUI i : ListUI.getUserList()){
 
-                        if(isUsername(i.UserName) && isPassword(i.Password)) {
+                        if(isUsername(i.getUserName()) && isPassword(i.getPassword())) {
                             isSuccesFull();
+                            MagazinJucarieUI.main.setVisible(true);
+                            main.setVisible(false);
 
                             return;
                         }
@@ -96,7 +98,7 @@ public class LoginInterface extends Component {
             public void actionPerformed(ActionEvent e) {
                 main.setVisible(false);
                 RegisterInterface.main.setVisible(true);
-                //
+
             }
         });
     }

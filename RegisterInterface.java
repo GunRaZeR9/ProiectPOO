@@ -4,19 +4,20 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class RegisterInterface extends JDialog {
-    private JTextField tfUsername;
+
     private JTextField tfPinCode;
     private JPasswordField pfPassword;
     private JPasswordField pfConfirmPassword;
     private JButton btnRegister;
     private JButton btnBack;
 
-    private JPanel registerPanel;
+    public  JPanel registerPanel;
+    private JTextField tfUsername;
 
 
     public static JFrame main = new JFrame("Register");
 
-    private static RegisterInterface UI = new RegisterInterface();
+    public static RegisterInterface UI = new RegisterInterface();
     public ListUI ListUI = new ListUI();
 
     public RegisterInterface() {
@@ -69,22 +70,21 @@ public class RegisterInterface extends JDialog {
     }
     private void RegisterUser(){
         RegisterUI RUI = new RegisterUI();
-        RUI.UserName = UI.tfUsername.getText();
-        RUI.Password = String.valueOf(pfPassword.getText());
-        RUI.ConfirmPassword = String.valueOf(pfConfirmPassword.getText());
-        RUI.PinCode = UI.tfPinCode.getText();
+        RUI.setUserName(UI.tfUsername.getText());
+        RUI.setPassword(String.valueOf(pfPassword.getText()));
+        RUI.setConfirmPassword(String.valueOf(pfConfirmPassword.getText()));
+        RUI.setPinCode(UI.tfPinCode.getText());
         new ListUI().setUserList(RUI);
         ArrayList<RegisterUI> a = ListUI.getUserList();
         //Parcurgerea Listei Returnata in Var a din clasa ListUi
         if(PasswordMatch() && !EmptyFields()) {
             for (RegisterUI i : a) {
-                System.out.println(i.UserName);
-                System.out.println(i.Password);
-                System.out.println(i.ConfirmPassword);
-                System.out.println(i.Email);
-                System.out.println(i.PinCode);
+                System.out.println(i.getUserName());
+                System.out.println(i.getPassword());
+                System.out.println(i.getConfirmPassword());
+                System.out.println(i.getPinCode());
                 SuccessfullRegistration();
-                //
+
             }
         }
 

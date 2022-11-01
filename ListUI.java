@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class ListUI {
-    //
-    private static ArrayList<RegisterUI> UserList = new ArrayList<RegisterUI>();
+
+    public static ArrayList<RegisterUI> UserList = new ArrayList<RegisterUI>();
 
     public ListUI(){
 

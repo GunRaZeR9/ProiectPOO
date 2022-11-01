@@ -1,10 +1,39 @@
 public class RegisterUI {
 
-    public String UserName;
-    public String Password;
+    private String UserName;
+    private String Password;
+    private String ConfirmPassword;
+    private String PinCode;
 
-    public String ConfirmPassword;
-    public String Email;
-    public String PinCode;
+    public String getUserName() {
+        return UserName;
+    }
 
+    public void setUserName(String userName) {
+        this.UserName = userName;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        this.Password = password;
+    }
+
+    public String getConfirmPassword() {
+        return ConfirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.ConfirmPassword = confirmPassword;
+    }
+
+    public String getPinCode() {
+        return PinCode;
+    }
+
+    public void setPinCode(String pinCode) {
+       this.PinCode = pinCode;
+    }
 }

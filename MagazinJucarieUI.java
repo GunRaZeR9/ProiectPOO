@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class MagazinJucarieUI {
     private static ArrayList<MagazinJucarii> ListaJucarii = new ArrayList<MagazinJucarii>();
-    private JPanel panel1;
+    public JPanel panel1;
     private JLabel Nume;
     private JLabel pret;
     private JLabel NrPerJucarie;
@@ -23,7 +23,10 @@ public class MagazinJucarieUI {
     private JTextField SITexField;
     private JLabel SINrJucarie;
     private JLabel Message;
+    private JButton button1;
     private JLabel Message1;
+
+    public static JFrame main = new JFrame("Magazin");
 
     public MagazinJucarieUI(){
         Introduceti.addActionListener(new ActionListener() {
